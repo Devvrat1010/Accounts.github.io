@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+        
+        input[type='submit'],
+        label {
+            margin-top: 1rem;
+        }
+        label {
+            margin: .4rem 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style-type: none;
+            color: white
+        }
+        
+        .flex-row {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar {
+            justify-content: space-between;
+            /* border: 2px solid black; */
+            background-color: black;
+            padding: 15px;
+        }
+        
+        .nav-items {
+            /* border: 2px solid greenyellow; */
+            margin: 0 5px;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        .reg{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-row navbar">
+        <a href="" class="brand-name">Registration</a>
+        <ul class="flex-row nav-links">
+            <a href="">
+                <li class="nav-items">Home</li>
+            </a>
+            <a href="">
+                <li class="nav-items">About</li>
+            </a>
+            <a href="">
+                <li class="nav-items">Services</li>
+            </a>
+            <a href="">
+                <li class="nav-items">Pages</li>
+            </a>
+            <a href="">
+                <li class="nav-items">Blog</li>
+            </a>
+            <a href="">
+                <li class="nav-items">Contact</li>
+            </a>
+        </ul>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <div>
+    <form action ="register" method="POST">
+        {% csrf_token %}
+        <label for="firstname">First Name:</label>
+            
+        <input type="text" id="firstname" name='firstname' placeholder="First Name" minlength="4" maxlength="32" size="30">
+            
+
+        <label for="lastname">Last Name:</label>
+
+        <input type="text" id="na" name="lastname" placeholder="Last Name"
+            minlength="4" maxlength="32" size="30">
+
+        <label for="username">Username:</label>
+
+        <input type="text" id="username" name="username" placeholder="Username"
+            minlength="4" maxlength="32" size="30">
+
+        <label for="email">Email:</label>
+
+        <input type="email" id="email"  name ="email" placeholder="Email"
+                pattern=".+@gmail.com" size="30" required>
+   
+            <label for="pass">Password (8 characters minimum):</label>
+                <input type="password" id="pass" name="pw" placeholder="Password"
+                    minlength="1" required>
+            <label for="pass">Confirm Password :</label>
+                    <input type="password" id="pass" name="cpw" placeholder="Confirm Password"
+                        minlength="1" required>
+        <h1>{{message}}</h1>
+       
+                
+        <input type="submit" value="Sign up">
+    </form>
+  
+    <button><a href="login_page">login</a></button> 
+    </div> 
+
+</body>
+</html>
